@@ -1,14 +1,14 @@
-import time
+
 from loguru import logger
 
-def main():
-    logger.info("Starting loop...")
 
-    for i in range(1, 101):
-        logger.info(f"Hello World {i}")
-        time.sleep(0.3)
+def hello_http(request):
+    try:
+        logger.info("Starting ETL")
 
-    logger.info("Finished loop.")
 
-if __name__ == "__main__":
-    main()
+        return "✅ ETL Pipeline Completed"
+
+    except Exception as e:
+        logger.error(str(e))
+        return f"❌ ETL FAILED: {str(e)}", 500

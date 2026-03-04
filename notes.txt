@@ -57,3 +57,11 @@ $ Tidak perlu Flask
 $ Tidak perlu gunicorn
 $ Lebih clean
 $ Cocok untuk looping
+
+
+gcloud run deploy etl-service \
+  --source . \
+  --region=europe-west1 \
+  --allow-unauthenticated \
+  --entry-point hello_http \
+  --runtime python311
