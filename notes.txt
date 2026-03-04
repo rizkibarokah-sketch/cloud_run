@@ -59,9 +59,10 @@ $ Lebih clean
 $ Cocok untuk looping
 
 
-gcloud run deploy etl-service \
+gcloud run services delete cloud-run --region=europe-west1
+
+
+gcloud run deploy cloud-run \
   --source . \
   --region=europe-west1 \
-  --allow-unauthenticated \
-  --entry-point hello_http \
-  --runtime python311
+  --allow-unauthenticated
