@@ -1,0 +1,59 @@
+https://github.com/rizkinurbarokah/cloudrun-job-hello
+
+========================================================================
+🚀 Deploy sebagai Cloud Run Job
+========================================================================
+
+🚀  Step 1 - Di Google Cloud Console:
+
+> Masuk ke Cloud Run
+
+> Pilih tab Jobs
+
+> Create Job
+
+> Pilih: Source repository (GitHub)
+
+https://github.com/rizkinurbarokah/cloudrun-job-hello
+
+> Runtime: 
+Python 3.11
+
+> Command override isi:
+python main.py
+
+Deploy.
+
+🚀  Step 2 - Cara Run Job
+
+Manual run:
+
+gcloud run jobs execute hello-job --region=asia-southeast1
+
+📊 Step 3 - Log Output
+
+Log bisa dilihat di:
+Cloud Logging → Filter by Cloud Run Job
+
+Output akan seperti:
+
+Starting loop...
+Hello World 1
+Hello World 2
+...
+Hello World 100
+Finished loop.
+🔥 Kenapa ini Lebih Ideal?
+
+-------------------------------------------------------------------------------
+Kalau kamu pakai Cloud Run Service:
+* Harus ada HTTP server
+* Tidak bisa hanya script
+* Akan timeout kalau tidak ada request
+
+Kalau pakai Cloud Run Job:
+$ Pure script
+$ Tidak perlu Flask
+$ Tidak perlu gunicorn
+$ Lebih clean
+$ Cocok untuk looping
